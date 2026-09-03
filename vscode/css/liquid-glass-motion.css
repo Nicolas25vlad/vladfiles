@@ -1,0 +1,68 @@
+.monaco-workbench .part.editor,
+.monaco-workbench .part.sidebar,
+.monaco-workbench .part.panel,
+.monaco-workbench .part.titlebar,
+.monaco-workbench .part.statusbar,
+.monaco-workbench .part.activitybar,
+.monaco-workbench .tabs-container,
+.monaco-workbench .pane-header,
+.monaco-workbench .panel-header,
+.monaco-workbench .quick-input-widget,
+.monaco-workbench .notifications-toasts,
+.monaco-workbench .editor-widget,
+.monaco-workbench .monaco-hover {
+    transition: background-color 220ms ease, border-color 220ms ease, box-shadow 220ms ease, opacity 220ms ease !important;
+}
+
+.monaco-workbench .monaco-list-row,
+.monaco-workbench .monaco-tl-row,
+.monaco-workbench .tab,
+.monaco-workbench .action-item,
+.monaco-workbench .statusbar-item {
+    transition: background-color 160ms ease, color 160ms ease, opacity 160ms ease !important;
+}
+
+.context-view,
+.context-view .monaco-menu-container,
+.context-view .monaco-menu,
+.context-view .monaco-list,
+.monaco-workbench .monaco-menu-container,
+.monaco-workbench .monaco-menu {
+    background: #1f1f28f2 !important;
+    background-color: #1f1f28f2 !important;
+    color: #dcd7ba !important;
+    opacity: 1 !important;
+    backdrop-filter: blur(10px) saturate(120%) !important;
+    -webkit-backdrop-filter: blur(10px) saturate(120%) !important;
+    transition: none !important;
+}
+
+.context-view .monaco-list-row,
+.monaco-workbench .monaco-menu .monaco-list-row {
+    background: transparent !important;
+    background-color: transparent !important;
+    color: #dcd7ba !important;
+}
+
+.context-view .monaco-list-row:hover,
+.context-view .monaco-list-row.focused,
+.monaco-workbench .monaco-menu .monaco-list-row:hover,
+.monaco-workbench .monaco-menu .monaco-list-row.focused {
+    background: #7e9cd8 !important;
+    background-color: #7e9cd8 !important;
+    color: #16161d !important;
+}
+
+.context-view *,
+.monaco-workbench .monaco-menu * {
+    animation: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .monaco-workbench *,
+    .monaco-workbench *::before,
+    .monaco-workbench *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}

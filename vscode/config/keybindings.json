@@ -1,0 +1,20 @@
+[
+    {
+        "key": "numpad_decimal",
+        "command": "keyclickfarmer.powerup"
+    },
+    {
+        "key": "ctrl+alt+k",
+        "command": "workbench.action.openGlobalKeybindings"
+    },
+    {
+        "key": "ctrl+shift+e",
+        "command": "workbench.files.action.focusFilesExplorer",
+        "when": "!filesExplorerFocus"
+    },
+    {
+        "key": "ctrl+shift+e",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "filesExplorerFocus"
+    }
+]

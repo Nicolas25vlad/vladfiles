@@ -1,0 +1,4 @@
+# Arquivos locais do VS Code e backups dos instaladores
+.vladfiles/
+backups/
+*.bak
