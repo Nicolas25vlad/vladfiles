@@ -35,10 +35,19 @@ Depois, no VS Code, execute `Custom CSS and JS: Enable` e reinicie a janela para
 
 O arquivo [`vscode/config/keybindings.json`](vscode/config/keybindings.json) contém a lista completa.
 
+## Git
+
+O pacote em [`git/`](git/) contém uma configuração global conservadora para Git, focada em comportamento previsível no Linux/WSL. Ela usa `main` por padrão, limpa referências remotas antigas, configura upstream no primeiro push e impede que `git pull` crie merges ou rebases automaticamente.
+
+Veja [`git/README.md`](git/README.md) para instalação e detalhes.
+
 ## Estrutura
 
 ```text
 vladfiles/
+├── git/
+│   ├── .gitconfig    # configuração global conservadora do Git
+│   └── README.md     # instalação e decisões da configuração
 └── vscode/
     ├── assets/       # wallpaper e preview
     ├── config/       # settings, keybindings e extensões
