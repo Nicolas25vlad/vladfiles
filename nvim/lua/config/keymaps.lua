@@ -5,6 +5,9 @@
 local map = vim.keymap.set
 map("n", "<leader>rn", ":set relativenumber!<CR>", { desc = "Toggle relative numbers", silent = true })
 map("n", "<Esc>", ":nohlsearch<CR>", { desc = "Clear search highlight", silent = true })
+map("n", "<A-z>", "u", { desc = "Undo", silent = true })
+map("i", "<A-z>", "<C-o>u", { desc = "Undo", silent = true })
+map("n", "<C-Down>", ":bd<CR>", { desc = "Delete buffer and window", silent = true })
 map("n", "<A-Up>", ":m .-2<CR>==", { desc = "Move line up", silent = true })
 map("n", "<A-Down>", ":m .+1<CR>==", { desc = "Move line down", silent = true })
 map("v", "<A-Up>", ":m '<-2<CR>gv=gv", { desc = "Move selection up", silent = true })
