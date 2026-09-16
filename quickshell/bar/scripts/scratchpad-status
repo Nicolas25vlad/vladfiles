@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if hyprctl activeworkspace -j 2>/dev/null | grep -q '"name": "special:scratchpad"'; then
+  printf '{"text":"","tooltip":"Scratchpad aberto · Super+S para fechar","class":"active"}\n'
+else
+  printf '{"text":"","tooltip":"Scratchpad · clique ou Super+S para abrir","class":"inactive"}\n'
+fi

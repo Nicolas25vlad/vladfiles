@@ -1,0 +1,140 @@
+{
+  "version": 1,
+  "idle": {
+    "screensaver": 150,
+    "lock": 300
+  },
+  "bar": {
+    "position": "top",
+    "transparent": false,
+    "floatGap": 6,
+    "cornerRadius": 12,
+    "noRoundedOnNoGaps": true,
+    "centerAnchor": "omarchy.clock",
+    "layout": {
+      "left": [
+        {
+          "id": "omarchy.menu"
+        },
+        {
+          "id": "vlad.workspaces"
+        },
+        {
+          "id": "kanagawa.scratchpad",
+          "type": "command",
+          "exec": "~/.config/omarchy/quickshell/bar/scripts/scratchpad-status",
+          "interval": 2,
+          "tooltip": "Toggle scratchpad",
+          "onClick": "hyprctl dispatch togglespecialworkspace scratchpad"
+        },
+        {
+          "id": "davidjm.rain",
+          "running": true,
+          "density": 1,
+          "speed": 0.5,
+          "fps": 15,
+          "quality": 1,
+          "lightning": false
+        },
+        {
+          "id": "community.workspace-stage"
+        },
+        {
+          "id": "io.github.devasstated.workspace-stash",
+          "displayMode": "count",
+          "overflowCountMode": "total"
+        }
+      ],
+      "center": [
+        {
+          "id": "omarchy.indicators"
+        },
+        {
+          "id": "omarchy.active-window"
+        },
+        {
+          "id": "io.github.ricky.ghstats"
+        },
+        {
+          "id": "omarchy.clock",
+          "format": "[ HH:mm ]",
+          "formatAlt": "[ yyyy-MM-dd ]",
+          "verticalFormat": "HH\n│\nmm"
+        },
+        {
+          "id": "omarchy.keyboard-layout"
+        },
+        {
+          "id": "omarchy.weather"
+        },
+        {
+          "id": "omarchy.system-update"
+        }
+      ],
+      "right": [
+        {
+          "id": "omarchy.tray"
+        },
+        {
+          "id": "vlad.media"
+        },
+        {
+          "id": "davidjm.scripture"
+        },
+        {
+          "id": "omarchy.agents"
+        },
+        {
+          "id": "omarchy.bluetooth"
+        },
+        {
+          "id": "omarchy.network"
+        },
+        {
+          "id": "omarchy.audio"
+        },
+        {
+          "id": "omarchy.monitor"
+        },
+        {
+          "id": "omarchy.power"
+        }
+      ]
+    },
+    "id": "charlieras262.floating-bar"
+  },
+  "plugins": [
+    {
+      "id": "sridhar.shelf"
+    },
+    {
+      "id": "io.github.joshferrara.quick-emoji"
+    },
+    {
+      "id": "io.github.pkayokay.omapaste"
+    },
+    {
+      "id": "io.github.0x1ocean.keyglow"
+    },
+    {
+      "id": "bibek.lock"
+    },
+    {
+      "id": "io.github.andyweiboan.missioncontrol"
+    },
+    {
+      "id": "io.github.claudsondouglas.arcdock"
+    },
+    {
+      "id": "io.github.maajix.spotlight"
+    }
+  ],
+  "disabledPlugins": [
+    "omarchy.lock",
+    "omarchy.media"
+  ],
+  "cloneSourceRestores": [
+    "bibek.lock",
+    "vlad.media"
+  ]
+}
