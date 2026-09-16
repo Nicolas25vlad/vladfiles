@@ -67,14 +67,30 @@ BarWidget {
 
         property bool needsScroll: implicitWidth > scrollClip.width
 
-        NumberAnimation on x {
+        onTextChanged: x = 0
+
+        SequentialAnimation on x {
           id: scrollAnim
-          running: labelText.needsScroll && !root.popupOpen && !root.bar.vertical
+          running: labelText.needsScroll && root.bar && !root.popupOpen && !root.bar.vertical
           loops: Animation.Infinite
-          duration: Math.max(6000, labelText.implicitWidth * 25)
-          from: scrollClip.width
-          to: -labelText.implicitWidth
-          easing.type: Easing.Linear
+
+          PauseAnimation { duration: 700 }
+
+          NumberAnimation {
+            from: 0
+            to: scrollClip.width - labelText.implicitWidth
+            duration: Math.max(6000, labelText.implicitWidth * 25)
+            easing.type: Easing.Linear
+          }
+
+          PauseAnimation { duration: 700 }
+
+          NumberAnimation {
+            from: scrollClip.width - labelText.implicitWidth
+            to: 0
+            duration: Math.max(6000, labelText.implicitWidth * 25)
+            easing.type: Easing.Linear
+          }
         }
       }
     }
