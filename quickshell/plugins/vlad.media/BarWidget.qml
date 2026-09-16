@@ -67,14 +67,12 @@ BarWidget {
 
         property bool needsScroll: implicitWidth > scrollClip.width
 
-        onTextChanged: x = 0
+        onTextChanged: if (scrollAnim.running) scrollAnim.restart()
 
         SequentialAnimation on x {
           id: scrollAnim
           running: labelText.needsScroll && root.bar && !root.popupOpen && !root.bar.vertical
           loops: Animation.Infinite
-
-          PauseAnimation { duration: 700 }
 
           NumberAnimation {
             from: 0
