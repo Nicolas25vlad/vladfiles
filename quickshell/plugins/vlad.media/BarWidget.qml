@@ -66,28 +66,28 @@ BarWidget {
         anchors.verticalCenter: parent.verticalCenter
 
         property bool needsScroll: implicitWidth > scrollClip.width
+        property int scrollDirection: -1
 
-        onTextChanged: if (scrollAnim.running) scrollAnim.restart()
+        onTextChanged: {
+          x = 0
+          scrollDirection = -1
+        }
 
-        SequentialAnimation on x {
-          id: scrollAnim
+        Timer {
+          id: scrollTimer
+          interval: 30
+          repeat: true
           running: labelText.needsScroll && root.bar && !root.popupOpen && !root.bar.vertical
-          loops: Animation.Infinite
-
-          NumberAnimation {
-            from: 0
-            to: scrollClip.width - labelText.implicitWidth
-            duration: Math.max(6000, labelText.implicitWidth * 25)
-            easing.type: Easing.Linear
-          }
-
-          PauseAnimation { duration: 700 }
-
-          NumberAnimation {
-            from: scrollClip.width - labelText.implicitWidth
-            to: 0
-            duration: Math.max(6000, labelText.implicitWidth * 25)
-            easing.type: Easing.Linear
+          onTriggered: {
+            var leftEdge = scrollClip.width - labelText.implicitWidth
+            labelText.x += labelText.scrollDirection
+            if (labelText.x <= leftEdge) {
+              labelText.x = leftEdge
+              labelText.scrollDirection = 1
+            } else if (labelText.x >= 0) {
+              labelText.x = 0
+              labelText.scrollDirection = -1
+            }
           }
         }
       }
